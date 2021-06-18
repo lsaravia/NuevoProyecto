@@ -1,0 +1,26 @@
+---
+title: "Analisis del nuevo proyecto"
+author: "Leonardo A. Saravia"
+date: "6/18/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+
+theme_set(theme_bw())
+
+```
+
+## Carga de datos
+
+```{r cargadedatos, echo=FALSE}
+
+da <- read_tsv("Data/body_size.txt")
+
+ggplot( da, aes(year,length, color=manejo)) + geom_point() + scale_color_viridis_d()
+
+```
+
