@@ -18,9 +18,13 @@ theme_set(theme_bw())
 
 ```{r cargadedatos, echo=FALSE}
 
-da <- read_tsv("Data/body_size.txt")
+da <- read_tsv("Data/body_size.txt") %>% filter(sitio=="Fe")
+
+names(da)
 
 ggplot( da, aes(year,length, color=manejo)) + geom_point() + scale_color_viridis_d()
+
+
 
 ```
 
