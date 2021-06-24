@@ -16,9 +16,13 @@ theme_set(theme_bw())
 
 ## Carga de datos
 
+
+* Energy flux: The link between multitrophic biodiversity and ecosystem functioning, Barnes et al. 2018
+
+
 ```{r cargadedatos, echo=FALSE}
 
-da <- read_tsv("Data/body_size.txt") %>% filter(sitio=="Fe")
+da <- read_csv("Data/energy_flux.csv") 
 
 names(da)
 
