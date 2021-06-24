@@ -25,6 +25,5 @@ names(da)
 ggplot( da, aes(year,length, color=manejo)) + geom_point() + scale_color_viridis_d()
 
 
-
 ```
 
