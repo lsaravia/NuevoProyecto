@@ -26,7 +26,7 @@ da <- read_csv("Data/energy_flux.csv")
 
 names(da)
 
-ggplot( da, aes(year,length, color=manejo)) + geom_point() + scale_color_viridis_d()
+ggplot( da, aes(abundance,biomass, color=species)) + geom_point() + scale_color_viridis_d()
 
 
 ```
