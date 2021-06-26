@@ -28,6 +28,6 @@ names(da)
 
 ggplot( da, aes(abundance,biomass, color=species)) + geom_point() + scale_color_viridis_d()
 
-#ggsave( "Figures/AbundanciaVSBiomass.png")
+ggsave( "Figures/AbundanciaVSBiomass.png")
 ```
 
