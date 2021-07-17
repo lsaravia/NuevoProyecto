@@ -31,40 +31,39 @@ ggplot( da, aes(abundance,biomass, color=species)) + geom_point() + scale_color_
 ggsave( "Figures/AbundanciaVSBiomass.png")
 ```
 
-# Ajuste por sitio
+# Analisis por grupo
 
-```{r ajustePowerLaw, echo=FALSE}
-
-require(poweRlaw)
-
-da <- da %>% mutate(bodysize = biomass / abundance )
-
-da %>% count(sample)
+```{r analisisPorGrupo, echo=FALSE}
 
 da <- da %>% extract( sample,into= c("site","sampleNum"), "([[:alnum:]]+)-([[:alnum:]]+)")
+
+
+da <- da %>% mutate(bodysize = biomass / abundance )
 
 da %>% count(site,sampleNum)
 
 site1 <- da %>% filter(site=="3high")
+
+require(poweRlaw)
 
 pw1 <- conpl$new(site1$bodysize)
 pw1$getXmin()
 est <- estimate_pars(pw1)
 pw1$setPars(est)
 plot(pw1)
-## Add in the fitted distribution
 lines(pw1, col = 2)
 
-ll <- da %>% group_by(site) %>% group_map( ~{pw1 <- conpl$new(.x$bodysize)
-                                      pw1$getXmin()
-                                      est <- estimate_pars(pw1)
-                                      pw1$setPars(est)
-                                      pw1
-                                      dd <- plot(pw1)
-                                      ll <- lines(pw1, col = 2)
-                                      ggplot( dd, aes(x,y) ) + geom_point() + scale_x_log10() + scale_y_log10() + 
+ll <- da %>% group_by(site) %>% group_map( ~{
+                                pw1 <- conpl$new(.x$bodysize)
+                                pw1$getXmin()
+                                est <- estimate_pars(pw1)
+                                pw1$setPars(est)
+                                dd <- plot(pw1)
+                                ll <- lines(pw1, col = 2)
+                                ggplot( dd, aes(x,y) ) + geom_point() + scale_x_log10() + scale_y_log10() + 
     geom_line(data=ll,aes(x,y, color="Power Law")) + ggtitle(.y)
 })
 
+ll[[2]]
 
 ```
