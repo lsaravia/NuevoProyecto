@@ -78,5 +78,7 @@ If the pull request cannot be merged online due to merge conflicts, or you wish 
 
 You can find the instruction to do so by clicking the (i) icon on the merge bar.
 
-Merging Instructions
+### Merging Instructions
+
+Add Merging instructions
 
