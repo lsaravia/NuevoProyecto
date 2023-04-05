@@ -22,6 +22,7 @@ Note: git pull does a git fetch followed by a git merge to update the local repo
 To create a branch, use git checkout -b <new-branch-name> [<base-branch-name>], where base-branch-name is optional and defaults to master. I'm going to create a new branch called pull-request-demo from the master branch and push it to github.
 
 `git checkout -b pull-request-demo`
+
 `git push origin pull-request-demo`
 
 ### Creating a Pull Request
