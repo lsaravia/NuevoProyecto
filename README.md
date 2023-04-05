@@ -46,3 +46,36 @@ Send Pull Request
 
 You should now see an open pull request.
 
+Using a Pull Request
+You can write comments related to a pull request,
+
+Writing a comment
+
+view all the commits by all contained by a pull request under the commits tab,
+
+Commits tab
+
+or see all the file changes from the pull request across all the commits under the "Files Changed" tab.
+
+Files Changed
+
+You can event leave a comment on particular lines in the code change simply by hovering to the left of a line and clicking on the blue note icon.
+
+Comment in line
+
+### Merging a Pull Request
+
+Once you and your collaborators are happy with the changes, you start to merge the changes back to master. There are a few ways to do this.
+
+First, you can use github's "Merge pull request" button at the bottom of your pull request to merge your changes. This is only available when github can detect that there will be no merge conflicts with the base branch. If all goes well, you just have to add a commit message and click on "Confirm Merge" to merge the changes.
+
+Merge pull request buttonConfirm Merge
+
+### Merging Locally
+
+If the pull request cannot be merged online due to merge conflicts, or you wish to test things locally before sending the merge to the repo on Github, you can perform the merge locally instead.
+
+You can find the instruction to do so by clicking the (i) icon on the merge bar.
+
+Merging Instructions
+
