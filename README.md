@@ -46,7 +46,8 @@ Send Pull Request
 
 You should now see an open pull request.
 
-Using a Pull Request
+### Using a Pull Request
+
 You can write comments related to a pull request,
 
 Writing a comment
