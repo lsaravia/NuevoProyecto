@@ -81,5 +81,19 @@ You can find the instruction to do so by clicking the (i) icon on the merge bar.
 
 ### Merging Instructions
 
-Add Merging instructions
+Step 1: Clone the repository or update your local repository with the latest changes.
+
+`git pull origin main`
+
+Step 2: Switch to the base branch of the pull request.
+
+`git checkout main`
+
+Step 3: Merge the head branch into the base branch.
+
+`git merge pull-request-demo`
+
+Step 4: Push the changes.
+
+`git push -u origin main`
 
